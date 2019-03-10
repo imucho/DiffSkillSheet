@@ -39,6 +39,7 @@ export default {
             options: [
                 { text: 'S', value: 'S' },
                 { text: 'A', value: 'A' },
+                { text: 'B', value: 'B' },
                 { text: 'C', value: 'C' },
                 { text: 'D', value: 'D' },
                 { text: 'E', value: 'E' },
