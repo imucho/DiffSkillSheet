@@ -15,10 +15,10 @@ const uniqueSkill = {
     },
     actions: {
         [UPDATE_UNIQUE_SKILL_NAME] ({commit, state}, newValue) {
-            commit(UPDATE_CROSS_DEPARTMENTAL, {data: {...state, name: newValue}})
+            commit(UPDATE_UNIQUE_SKILL_NAME, {data: {...state, name: newValue}})
         },
         [UPDATE_UNIQUE_SKILL_DESCRIPTION] ({commit, state}, newValue) {
-            commit(UPDATE_CROSS_DEPARTMENTAL, {data: {...state, description: newValue}})
+            commit(UPDATE_UNIQUE_SKILL_DESCRIPTION, {data: {...state, description: newValue}})
         }
     },
     getters: {

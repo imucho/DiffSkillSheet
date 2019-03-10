@@ -6,10 +6,11 @@
 </template>
 
 <script>
-import { REGISTER_NAME, REGISTER_COMPANY, REGISTER_JOB, UPDATE_PROGRAMMING, UPDATE_SOFTWARE_DESIGN, UPDATE_MAN_HOUR_ESTIMATE, UPDATE_MEETING, UPDATE_CROSS_DEPARTMENTAL } from '../store/mutation-types'
+import { REGISTER_NAME, REGISTER_COMPANY, REGISTER_JOB, UPDATE_PROGRAMMING, UPDATE_SOFTWARE_DESIGN, UPDATE_MAN_HOUR_ESTIMATE, UPDATE_MEETING, UPDATE_CROSS_DEPARTMENTAL, UPDATE_UNIQUE_SKILL_NAME, UPDATE_UNIQUE_SKILL_DESCRIPTION } from '../store/mutation-types'
 import { createNamespacedHelpers } from 'vuex'
 const profileHelper = createNamespacedHelpers('profile')
 const commonSkillHelper = createNamespacedHelpers('skill/common')
+const uniqueSkillHelper = createNamespacedHelpers('skill/unique')
 export default {
     methods: {
         ...profileHelper.mapActions({
@@ -24,6 +25,10 @@ export default {
             UPDATE_MEETING,
             UPDATE_CROSS_DEPARTMENTAL
         }),
+        ...uniqueSkillHelper.mapActions({
+            UPDATE_UNIQUE_SKILL_NAME,
+            UPDATE_UNIQUE_SKILL_DESCRIPTION
+        }),
         handleFileSelect(event){
             const file = event.target.files[0]
             const reader = new FileReader()
@@ -36,7 +41,8 @@ export default {
                 skill: {
                     common: {
                         programming,softwareDesign,manHourEstimate,meeting,crossDepartmental
-                    }
+                    },
+                    unique
                 }
             }= JSON.parse(event.target.result)
             this.REGISTER_NAME(name)
@@ -47,6 +53,8 @@ export default {
             this.UPDATE_MAN_HOUR_ESTIMATE(manHourEstimate)
             this.UPDATE_MEETING(meeting)
             this.UPDATE_CROSS_DEPARTMENTAL(crossDepartmental)
+            this.UPDATE_UNIQUE_SKILL_NAME(unique.name)
+            this.UPDATE_UNIQUE_SKILL_DESCRIPTION(unique.description)
         }
     }
 }

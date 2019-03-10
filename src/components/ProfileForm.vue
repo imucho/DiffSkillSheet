@@ -1,13 +1,13 @@
 <template>
     <div>
         <label for="name">
-            名前：<input type="text" name="name" :value="name" @input="updateName">
+            名前：<input type="text" id="name" name="name" :value="name" @input="updateName">
         </label>
         <label for="company">
-            会社：<input type="text" name="company" :value="company" @input="updateCompany">
+            会社：<input type="text" id="company" name="company" :value="company" @input="updateCompany">
         </label>
         <label for="job">
-            職種：<input type="text" name="job" :value="job" @input="updateJob">
+            職種：<input type="text" id="job" name="job" :value="job" @input="updateJob">
         </label>
     </div>
 </template>
