@@ -1,0 +1,27 @@
+{
+  "name": "das",
+  "version": "1.0.0",
+  "description": "diff ability sheet",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com.sub:imucho/DiffAbilitySheet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.6.0",
+    "parcel": "^1.12.0",
+    "typescript": "^3.3.3333",
+    "vue-template-compiler": "^2.6.8"
+  },
+  "dependencies": {
+    "vue": "^2.6.8",
+    "vue-hot-reload-api": "^2.3.3",
+    "vuex": "^3.1.0"
+  }
+}
