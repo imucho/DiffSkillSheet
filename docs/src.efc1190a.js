@@ -25,4 +25,4 @@ var t=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0}),export
 },{"vue":"QPfz","vue-router":"7ov2","../components/Register":"GmlB","../components/Viewer":"svXZ"}],"Focm":[function(require,module,exports) {
 "use strict";var e=n(require("vue")),r=n(require("./components/App")),u=n(require("./store")),t=n(require("./router"));function n(e){return e&&e.__esModule?e:{default:e}}new e.default({el:"#app",store:u.default,router:t.default,render:function(e){return e(r.default)}});
 },{"vue":"QPfz","./components/App":"TC+2","./store":"rMii","./router":"mJnk"}]},{},["Focm"], null)
-//# sourceMappingURL=/src.efc1190a.js.map
+//# sourceMappingURL=src.efc1190a.js.map
