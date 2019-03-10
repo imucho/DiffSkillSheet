@@ -1,11 +1,11 @@
-import { REGISTER_NAME, REGISTER_COMPANY, REGISTER_OCCUPATION, GET_NAME, GET_COMPANY, GET_OCCUPATION } from '../mutation-types'
+import { REGISTER_NAME, REGISTER_COMPANY, REGISTER_JOB } from '../mutation-types'
 
 const profile = {
     namespaced: true,
     state: {
         name: '',
         company: '',
-        occupation: ''
+        job: ''
     },
     mutations: {
         [REGISTER_NAME] (state, payload) {
@@ -14,8 +14,8 @@ const profile = {
         [REGISTER_COMPANY] (state, payload) {
             state.company = payload.data.company
         },
-        [REGISTER_OCCUPATION] (state, payload) {
-            state.occupation = payload.data.occupation
+        [REGISTER_JOB] (state, payload) {
+            state.job = payload.data.job
         }
     },
     actions: {
@@ -25,8 +25,8 @@ const profile = {
         [REGISTER_COMPANY] ({commit, state}, newValue) {
             commit(REGISTER_COMPANY, {data: {...state, company: newValue}})
         },
-        [REGISTER_OCCUPATION] ({commit, state}, newValue) {
-            commit(REGISTER_OCCUPATION, {data: {...state, occupation: newValue}})
+        [REGISTER_JOB] ({commit, state}, newValue) {
+            commit(REGISTER_JOB, {data: {...state, job: newValue}})
         }
     },
     getters: {
