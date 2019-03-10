@@ -33,4 +33,4 @@ const profile = {
     }
 };
 
-export default profile;
+export default profile
