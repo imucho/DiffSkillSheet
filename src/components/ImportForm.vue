@@ -52,7 +52,7 @@ export default {
             }= JSON.parse(event.target.result)
             this.REGISTER_NAME(name)
             this.REGISTER_COMPANY(company)
-            this.REGISTER_JOB(company)
+            this.REGISTER_JOB(job)
             this.UPDATE_PROGRAMMING(programming)
             this.UPDATE_SOFTWARE_DESIGN(softwareDesign)
             this.UPDATE_MAN_HOUR_ESTIMATE(manHourEstimate)
