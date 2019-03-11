@@ -3,6 +3,7 @@
         <profile-form></profile-form>
         <common-skill-form></common-skill-form>
         <unique-skill-form></unique-skill-form>
+        <numerical-skill-form></numerical-skill-form>
         <export-form :json="json"></export-form>
         <import-form></import-form>
         <router-link to="/viewer">Go to viewer</router-link>
@@ -15,11 +16,13 @@ import ExportForm from './ExportForm'
 import ImportForm from './ImportForm'
 import CommonSkillForm from './CommonSkillForm'
 import UniqueSkillForm from './UniqueSkillForm'
+import NumericalSkillForm from './NumericalSkillForm'
 export default {
     components: {
         'profile-form': ProfileForm,
         'common-skill-form': CommonSkillForm,
         'unique-skill-form': UniqueSkillForm,
+        'numerical-skill-form': NumericalSkillForm,
         'export-form': ExportForm,
         'import-form': ImportForm
     },
