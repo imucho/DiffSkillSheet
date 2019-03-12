@@ -1,7 +1,7 @@
 {
-  "name": "das",
+  "name": "dss",
   "version": "1.0.0",
-  "description": "diff ability sheet",
+  "description": "diff skill sheet",
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html --out-dir docs",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com.sub:imucho/DiffAbilitySheet.git"
+    "url": "git@github.com.sub:imucho/DiffSkillSheet.git"
   },
   "author": "",
   "license": "ISC",
