@@ -1,15 +1,15 @@
 <template>
-    <div>
-        <label for="name">
-            名前：<input type="text" id="name" name="name" :value="name" @input="updateName">
-        </label>
-        <label for="company">
-            会社：<input type="text" id="company" name="company" :value="company" @input="updateCompany">
-        </label>
-        <label for="job">
-            職種：<input type="text" id="job" name="job" :value="job" @input="updateJob">
-        </label>
-    </div>
+    <section>
+        <b-field horizontal label="名前">
+            <b-input name="name" :value="name" @input="REGISTER_NAME" placeholder="山田太郎" expanded></b-input>
+        </b-field>
+        <b-field horizontal label="会社">
+            <b-input name="company" :value="company" @input="REGISTER_COMPANY" expanded></b-input>
+        </b-field>
+        <b-field horizontal label="職種">
+            <b-input name="job" :value="job" @input="REGISTER_JOB" placeholder="クライアントエンジニア" expanded></b-input>
+        </b-field>
+    </section>
 </template>
 
 <script>
@@ -29,16 +29,7 @@ export default {
             REGISTER_NAME,
             REGISTER_COMPANY,
             REGISTER_JOB
-        ]),
-        updateName(event){
-            this.REGISTER_NAME(event.target.value)
-        },
-        updateCompany(event){
-            this.REGISTER_COMPANY(event.target.value)
-        },
-        updateJob(event){
-            this.REGISTER_JOB(event.target.value)
-        }
+        ])
     }
 }
 </script>
