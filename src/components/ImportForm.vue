@@ -1,7 +1,7 @@
 <template>
     <b-field class="file">
         <b-upload @input="handleFileSelect" accept="application/json">
-            <a class="button is-black">
+            <a class="button is-success">
                 <b-icon icon="file-upload" pack="fa"></b-icon>
                 <span>
                     <slot>import</slot>

@@ -1,5 +1,5 @@
 <template>
-    <button class="button is-black" @click="exportJson">
+    <button class="button is-success" @click="exportJson">
         <slot>export</slot>
     </button>
 </template>

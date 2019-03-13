@@ -16,13 +16,14 @@
         </div>
         <div class="columns">
             <div class="column">
-                <ul>
-                    <li v-for="(skill, index) in list" :key="index">
-                        <div>
-                            {{skill.name}} : {{skill.num}} <button @click="removeSkill(skill)">削除</button>
-                        </div>
-                    </li>
-                </ul>
+                <b-field grouped group-multiline>
+                    <div class="control" v-for="(skill, index) in list" :key="index">
+                        <b-taglist attached>
+                            <b-tag type="is-primary" size="is-medium">{{skill.name}}</b-tag>
+                            <b-tag @close="removeSkill(skill)" type="is-dark" size="is-medium" closable>{{skill.num}}</b-tag>
+                        </b-taglist>
+                    </div>
+                </b-field>
             </div>
         </div>
     </section>

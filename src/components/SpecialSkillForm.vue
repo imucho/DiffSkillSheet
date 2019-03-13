@@ -16,13 +16,11 @@
         </div>
         <div class="columns">
             <div class="column">
-                <ul>
-                    <li v-for="(skill, index) in list" :key="index">
-                        <div>
-                            {{skill.name}} : {{skill.type}} <button @click="removeSkill(skill)">削除</button>
-                        </div>
-                    </li>
-                </ul>
+                <b-field grouped group-multiline>
+                    <div class="control" v-for="(skill, index) in list" :key="index">
+                        <b-tag @close="removeSkill(skill)" type="is-info" size="is-medium" attached closable>{{skill.name}} : {{convertTypeToString(skill.type)}}</b-tag>
+                    </div>
+                </b-field>
             </div>
         </div>
     </section>
@@ -66,6 +64,27 @@ export default {
         },
         removeSkill(skill){
             this.REMOVE_SPECIAL_SKILL(skill.id)
+        },
+        convertTypeToString(type){
+            let ret = '';
+            switch(type){
+                case 1:
+                    ret = 'パーソナリティ'
+                    break;
+                case 2:
+                    ret = 'ポジティブ'
+                    break;
+                case 3:
+                    ret = 'ネガティブ'
+                    break;
+                case 4:
+                    ret = 'ネガポジ'
+                    break;
+                default:
+                    console.log("不正なタイプ");
+                    break;
+            }
+            return ret;
         }
     }
 }
