@@ -1,8 +1,14 @@
 <template>
-    <label for="das">
-        import
-        <input type="file" name="das" id="das" accept="application/json" @change="handleFileSelect">
-    </label>
+    <b-field class="file">
+        <b-upload @input="handleFileSelect" accept="application/json">
+            <a class="button is-black">
+                <b-icon icon="file-upload" pack="fa"></b-icon>
+                <span>
+                    <slot>import</slot>
+                </span>
+            </a>
+        </b-upload>
+    </b-field>
 </template>
 
 <script>
@@ -37,8 +43,7 @@ export default {
         ...specialSkillHelper.mapActions({
             IMPORT_SPECIAL_SKILLS
         }),
-        handleFileSelect(event){
-            const file = event.target.files[0]
+        handleFileSelect(file){
             const reader = new FileReader()
             reader.onload = this.onload
             reader.readAsText(file)
@@ -54,7 +59,7 @@ export default {
                     numerical,
                     special,
                 }
-            }= JSON.parse(event.target.result)
+            } = JSON.parse(event.target.result)
             this.REGISTER_NAME(name)
             this.REGISTER_COMPANY(company)
             this.REGISTER_JOB(job)
@@ -71,9 +76,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-    input {
-        display: none;
-    }
-</style>

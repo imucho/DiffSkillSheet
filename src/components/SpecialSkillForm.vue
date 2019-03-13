@@ -1,14 +1,16 @@
 <template>
-    <div>
-        <div>
-            <input type="text" v-model="text">
-            <select v-model="type">
+    <section>
+        <b-field>
+            <b-input v-model="text" placeholder="スキル名"></b-input>
+            <b-select v-model="type" placeholder="タイプ">
                 <option v-for="(option, index) in options" v-bind:value="option.value" :key="index">
                     {{ option.text }}
                 </option>
-            </select>
-            <button @click="addSkill">追加</button>
-        </div>
+            </b-select>
+            <p class="control">
+                <button class="button is-primary" @click="addSkill">追加</button>
+            </p>
+        </b-field>
         <div>
             <ul>
                 <li v-for="(skill, index) in list" :key="index">
@@ -18,7 +20,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -51,6 +53,8 @@ export default {
         addSkill(event){
             const {text: name, type} = this
             this.ADD_SPECIAL_SKILL({name, type})
+            this.text = ''
+            this.type = 1
         },
         removeSkill(skill){
             this.REMOVE_SPECIAL_SKILL(skill.id)

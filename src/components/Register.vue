@@ -5,9 +5,8 @@
         <unique-skill-form></unique-skill-form>
         <numerical-skill-form></numerical-skill-form>
         <special-skill-form></special-skill-form>
-        <export-form :json="json"></export-form>
-        <import-form></import-form>
-        <router-link to="/viewer">Go to viewer</router-link>
+        <export-form :json="json">Export</export-form>
+        <import-form>Import</import-form>
     </div>
 </template>
 

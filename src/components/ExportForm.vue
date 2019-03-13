@@ -1,14 +1,12 @@
 <template>
-    <input type="button" :value="label" @click="exportJson">
+    <button class="button is-black" @click="exportJson">
+        <slot>export</slot>
+    </button>
 </template>
 
 <script>
 export default {
     props: {
-        label: {
-            type: String,
-            default: 'export'
-        },
         fileName: {
             type: String,
             default: 'DiffAbilitySheet'
