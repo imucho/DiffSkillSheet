@@ -1,11 +1,14 @@
 <template>
-    <div>
-        <skill-select :changeCallback="UPDATE_PROGRAMMING" :value="programming">プログラミング</skill-select>
-        <skill-select :changeCallback="UPDATE_SOFTWARE_DESIGN" :value="softwareDesign">設計</skill-select>
-        <skill-select :changeCallback="UPDATE_MAN_HOUR_ESTIMATE" :value="manHourEstimate">工数見積もり</skill-select>
-        <skill-select :changeCallback="UPDATE_MEETING" :value="meeting">ミーティング</skill-select>
-        <skill-select :changeCallback="UPDATE_CROSS_DEPARTMENTAL" :value="crossDepartmental">横軸</skill-select>
-    </div>
+    <section>
+        <h3 class="title">共通スキル</h3>
+        <div class="columns">
+            <skill-select :changeCallback="UPDATE_PROGRAMMING" :value="programming">プログラミング</skill-select>
+            <skill-select :changeCallback="UPDATE_SOFTWARE_DESIGN" :value="softwareDesign">設計</skill-select>
+            <skill-select :changeCallback="UPDATE_MAN_HOUR_ESTIMATE" :value="manHourEstimate">工数見積もり</skill-select>
+            <skill-select :changeCallback="UPDATE_MEETING" :value="meeting">ミーティング</skill-select>
+            <skill-select :changeCallback="UPDATE_CROSS_DEPARTMENTAL" :value="crossDepartmental">横軸</skill-select>
+        </div>
+    </section>
 </template>
 
 <script>

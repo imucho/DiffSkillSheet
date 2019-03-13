@@ -1,12 +1,17 @@
 <template>
-   <section>
-       <b-field label="スキル名">
-           <b-input :value="name" @input="UPDATE_UNIQUE_SKILL_NAME"></b-input>
-       </b-field>
-       <b-field label="スキル説明">
-           <b-input :value="description" @input="UPDATE_UNIQUE_SKILL_DESCRIPTION" type="textarea" maxlength="200"></b-input>
-       </b-field>
-   </section> 
+    <section>
+        <h3 class="title">固有スキル</h3>
+        <div class="columns">
+            <b-field class="column" label="スキル名">
+                <b-input :value="name" @input="UPDATE_UNIQUE_SKILL_NAME"></b-input>
+            </b-field>
+        </div>
+        <div class="columns">
+            <b-field class="column" label="スキル説明">
+                <b-input :value="description" @input="UPDATE_UNIQUE_SKILL_DESCRIPTION" type="textarea" maxlength="200"></b-input>
+            </b-field>
+        </div>
+    </section> 
 </template>
 
 <script>

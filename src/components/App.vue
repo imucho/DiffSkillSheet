@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <section>
             <b-tabs type="is-toggle-rounded" position="is-centered" size="is-medium" class="block" @change="changeTab">
                 <b-tab-item label="Editor" icon="edit" icon-pack="far"></b-tab-item>

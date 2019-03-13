@@ -5,8 +5,12 @@
         <unique-skill-form></unique-skill-form>
         <numerical-skill-form></numerical-skill-form>
         <special-skill-form></special-skill-form>
-        <export-form :json="json">Export</export-form>
-        <import-form>Import</import-form>
+        <section>
+            <div class="columns">
+                <export-form :json="json">Export</export-form>
+                <import-form>Import</import-form>
+            </div>
+        </section>
     </div>
 </template>
 
@@ -35,3 +39,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+section {
+    padding: 1em;
+}
+</style>

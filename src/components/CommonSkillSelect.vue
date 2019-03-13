@@ -1,7 +1,9 @@
 <template>
-    <section>
-        <b-field>
+    <div class="column tile is-vertical">
+        <p class="label">
             <slot>共通スキル</slot>
+        </p>
+        <b-field class="tile v-center">
             <b-select :value="before" @input="changeBeforeValue">
                 <option
                     v-for="(option, index) in options"
@@ -20,7 +22,7 @@
                 </option>
             </b-select>
         </b-field>
-    </section>
+    </div>
 </template>
 
 <script>
@@ -75,3 +77,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.v-center {
+    align-items: center;
+}
+</style>

@@ -1,24 +1,29 @@
 <template>
     <section>
-        <b-field>
-            <b-input v-model="text" placeholder="スキル名"></b-input>
-            <b-select v-model="type" placeholder="タイプ">
-                <option v-for="(option, index) in options" v-bind:value="option.value" :key="index">
-                    {{ option.text }}
-                </option>
-            </b-select>
-            <p class="control">
-                <button :disabled="isButtonDisabled" class="button is-primary" @click="addSkill">追加</button>
-            </p>
-        </b-field>
-        <div>
-            <ul>
-                <li v-for="(skill, index) in list" :key="index">
-                    <div>
-                        {{skill.name}} : {{skill.type}} <button @click="removeSkill(skill)">削除</button>
-                    </div>
-                </li>
-            </ul>
+        <h3 class="title">特別スキル</h3>
+        <div class="columns">
+            <b-field class="column">
+                <b-input v-model="text" placeholder="スキル名"></b-input>
+                <b-select v-model="type" placeholder="タイプ">
+                    <option v-for="(option, index) in options" v-bind:value="option.value" :key="index">
+                        {{ option.text }}
+                    </option>
+                </b-select>
+                <p class="control">
+                    <button :disabled="isButtonDisabled" class="button is-primary" @click="addSkill">追加</button>
+                </p>
+            </b-field>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <ul>
+                    <li v-for="(skill, index) in list" :key="index">
+                        <div>
+                            {{skill.name}} : {{skill.type}} <button @click="removeSkill(skill)">削除</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 </template>
