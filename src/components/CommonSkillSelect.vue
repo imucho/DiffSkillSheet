@@ -1,18 +1,26 @@
 <template>
-    <div>
-        <slot>共通スキル</slot>
-        <select :value="before" @change="changeBeforeValue">
-            <option v-for="(option, index) in options" v-bind:value="option.value" :key="index">
-                {{ option.text }}
-            </option>
-        </select>
-        →
-        <select :value="after" @change="changeAfterValue">
-            <option v-for="(option, index) in options" v-bind:value="option.value" :key="index">
-                {{ option.text }}
-            </option>
-        </select>
-    </div>
+    <section>
+        <b-field>
+            <slot>共通スキル</slot>
+            <b-select :value="before" @input="changeBeforeValue">
+                <option
+                    v-for="(option, index) in options"
+                    :value="option.value"
+                    :key="index">
+                    {{ option.text }}
+                </option>
+            </b-select>
+            ➡︎
+            <b-select :value="after" @input="changeAfterValue">
+                <option
+                    v-for="(option, index) in options"
+                    :value="option.value"
+                    :key="index">
+                    {{ option.text }}
+                </option>
+            </b-select>
+        </b-field>
+    </section>
 </template>
 
 <script>
@@ -56,12 +64,12 @@ export default {
         }
     },
     methods: {
-        changeBeforeValue(event){
-            const newValue = {after: this.after, before: event.target.value}
+        changeBeforeValue(value){
+            const newValue = {after: this.after, before: value}
             this.$props.changeCallback(newValue)
         },
-        changeAfterValue(event){
-            const newValue = {after: event.target.value, before: this.before}
+        changeAfterValue(value){
+            const newValue = {after: value, before: this.before}
             this.$props.changeCallback(newValue)
         }
     }
