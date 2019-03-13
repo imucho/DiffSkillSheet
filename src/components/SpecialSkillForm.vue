@@ -8,7 +8,7 @@
                 </option>
             </b-select>
             <p class="control">
-                <button class="button is-primary" @click="addSkill">追加</button>
+                <button :disabled="isButtonDisabled" class="button is-primary" @click="addSkill">追加</button>
             </p>
         </b-field>
         <div>
@@ -43,7 +43,10 @@ export default {
     computed: {
         ...mapState({
             list: state => state.list
-        })
+        }),
+        isButtonDisabled(){
+            return this.text.replace(/\s+/g, '').length <= 0
+        }
     },
     methods: {
         ...mapActions([
