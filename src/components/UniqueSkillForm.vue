@@ -1,14 +1,12 @@
 <template>
-    <div>
-        <label for="unique-skill-name">
-            スキル名：
-            <input type="text" id="unique-skill-name" name="unique-skill-name" :value="name" @input="updateName">
-        </label>
-        <label for="unique-skill-description">
-            スキル説明：
-            <textarea name="unique-skill-description" id="unique-skill-description" cols="30" rows="10" :value="description" @input="updateDescription"></textarea>
-        </label>
-    </div>
+   <section>
+       <b-field label="スキル名">
+           <b-input :value="name" @input="UPDATE_UNIQUE_SKILL_NAME"></b-input>
+       </b-field>
+       <b-field label="スキル説明">
+           <b-input :value="description" @input="UPDATE_UNIQUE_SKILL_DESCRIPTION" type="textarea" maxlength="200"></b-input>
+       </b-field>
+   </section> 
 </template>
 
 <script>
@@ -26,13 +24,7 @@ export default {
         ...mapActions([
             UPDATE_UNIQUE_SKILL_NAME,
             UPDATE_UNIQUE_SKILL_DESCRIPTION
-        ]),
-        updateName(event){
-            this.UPDATE_UNIQUE_SKILL_NAME(event.target.value)
-        },
-        updateDescription(event){
-            this.UPDATE_UNIQUE_SKILL_DESCRIPTION(event.target.value)
-        }
+        ])
     }
 
 }
