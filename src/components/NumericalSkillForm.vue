@@ -19,7 +19,7 @@
                 <b-field grouped group-multiline>
                     <div class="control" v-for="(skill, index) in list" :key="index">
                         <b-taglist attached>
-                            <b-tag type="is-primary" size="is-medium">{{skill.name}}</b-tag>
+                            <b-tag :type="convertNumToColorType(skill.num)" size="is-medium">{{skill.name}}</b-tag>
                             <b-tag @close="removeSkill(skill)" type="is-dark" size="is-medium" closable>{{skill.num}}</b-tag>
                         </b-taglist>
                     </div>
@@ -68,6 +68,30 @@ export default {
         },
         removeSkill(skill){
             this.REMOVE_NUMERICAL_SKILL(skill.id)
+        },
+        convertNumToColorType(num){
+            let ret = '';
+            switch(num){
+                case 1:
+                    ret = 'is-danger'
+                    break;
+                case 2:
+                    ret = 'is-warning'
+                    break;
+                case 3:
+                    ret = 'is-light'
+                    break;
+                case 4:
+                    ret = 'is-info'
+                    break;
+                case 5:
+                    ret = 'is-success'
+                    break;
+                default:
+                    console.log("不正なタイプ");
+                    break;
+            }
+            return ret;
         }
     }
 }

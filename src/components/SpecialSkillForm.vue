@@ -5,7 +5,7 @@
             <b-field class="column">
                 <b-input v-model="text" placeholder="スキル名"></b-input>
                 <b-select v-model="type" placeholder="タイプ">
-                    <option v-for="(option, index) in options" v-bind:value="option.value" :key="index">
+                    <option v-for="(option, index) in options" :value="option.value" :key="index">
                         {{ option.text }}
                     </option>
                 </b-select>
@@ -18,7 +18,7 @@
             <div class="column">
                 <b-field grouped group-multiline>
                     <div class="control" v-for="(skill, index) in list" :key="index">
-                        <b-tag @close="removeSkill(skill)" type="is-info" size="is-medium" attached closable>{{skill.name}} : {{convertTypeToString(skill.type)}}</b-tag>
+                        <b-tag :type="convertTypeToColorType(skill.type)" @close="removeSkill(skill)" size="is-medium" attached closable>{{skill.name}}</b-tag>
                     </div>
                 </b-field>
             </div>
@@ -65,20 +65,20 @@ export default {
         removeSkill(skill){
             this.REMOVE_SPECIAL_SKILL(skill.id)
         },
-        convertTypeToString(type){
+        convertTypeToColorType(type){
             let ret = '';
             switch(type){
                 case 1:
-                    ret = 'パーソナリティ'
+                    ret = 'is-success'
                     break;
                 case 2:
-                    ret = 'ポジティブ'
+                    ret = 'is-info'
                     break;
                 case 3:
-                    ret = 'ネガティブ'
+                    ret = 'is-danger'
                     break;
                 case 4:
-                    ret = 'ネガポジ'
+                    ret = 'is-primary'
                     break;
                 default:
                     console.log("不正なタイプ");
