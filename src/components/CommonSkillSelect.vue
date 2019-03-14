@@ -12,7 +12,7 @@
                     {{ option.text }}
                 </option>
             </b-select>
-            <b-icon icon="arrow-right" pack="fas" size="is-small"></b-icon>
+            <b-icon icon="angle-right" pack="fa" size="is-medium"></b-icon>
             <b-select :value="after" @input="changeAfterValue">
                 <option
                     v-for="(option, index) in options"

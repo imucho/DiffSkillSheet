@@ -1,12 +1,37 @@
 <template>
-    <div>
-        <div class="columns">
-                <div class="column profile">
+    <div class="content">
+        <div class="columns top">
+                <div class="column is-4 profile">
+                    <div class="columns">
+                        <p class="title is-4 column">{{name}}</p>
+                    </div>
+                    <div class="columns">
+                        <p class="label column">{{company}}</p>
+                    </div>
+                    <div class="columns">
+                        <p class="label column">{{job}}</p>
+                    </div>
                 </div>
                 <div class="column common">
+                    <div class="columns">
+                        <div class="column" v-for="(skill, key) in common" :key="key">
+                            <div>
+                                <p class="label">{{convertCommonSkillKeyToSkillName(key)}}</p>
+                            </div>
+                            <div class="columns v-center">
+                                <div class="column">
+                                    <p class="title is-1" :class="convertCommonSkillValueToClass(skill.before)">{{skill.before}}</p>
+                                </div>
+                                <div class="column"><b-icon icon="angle-right" pack="fa" size="is-large"></b-icon></div>
+                                <div class="column">
+                                    <p class="title is-1" :class="convertCommonSkillValueToClass(skill.after)">{{skill.after}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
         </div>
-        <div>
+        <div class="bottom">
             <div class="columns unique">
                 <div class="column is-1">
                     <b-tag type="is-warning" size="is-large">{{unique.name}}</b-tag>
@@ -60,7 +85,7 @@ export default {
     },
     methods: {
         convertTypeToColorType(type){
-            let ret = '';
+            let ret = ''
             switch(type){
                 case 1:
                     ret = 'is-success'
@@ -75,13 +100,13 @@ export default {
                     ret = 'is-primary'
                     break;
                 default:
-                    console.log("不正なタイプ");
+                    console.log('不正なタイプ')
                     break;
             }
-            return ret;
+            return ret
         },
         convertNumToColorType(num){
-            let ret = '';
+            let ret = ''
             switch(num){
                 case 1:
                     ret = 'is-danger'
@@ -99,17 +124,130 @@ export default {
                     ret = 'is-success'
                     break;
                 default:
-                    console.log("不正なタイプ");
+                    console.log('不正なタイプ')
                     break;
             }
-            return ret;
+            return ret
+        },
+        convertCommonSkillKeyToSkillName(key){
+            let ret = ''
+            switch(key){
+                case 'programming':
+                    ret = 'プログラミング'
+                    break;
+                case 'softwareDesign':
+                    ret = '設計'
+                    break;
+                case 'manHourEstimate':
+                    ret = '工数見積もり'
+                    break;
+                case 'meeting':
+                    ret = 'ミーティング'
+                    break;
+                case 'crossDepartmental':
+                    ret = '横軸'
+                    break;
+                default:
+                    console.log('不正なキー')
+                    break;
+            }
+            return ret
+        },
+        convertCommonSkillValueToClass(value){
+            let ret = ''
+            switch(value){
+                case 'S':
+                    ret = 'is-s'
+                    break;
+                case 'A':
+                    ret = 'is-a'
+                    break;
+                case 'B':
+                    ret = 'is-b'
+                    break;
+                case 'C':
+                    ret = 'is-c'
+                    break;
+                case 'D':
+                    ret = 'is-d'
+                    break;
+                case 'E':
+                    ret = 'is-e'
+                    break;
+                case 'F':
+                    ret = 'is-f'
+                    break;
+                default:
+                    console.log('不正な値')
+                    break;
+            }
+            return ret
         }
     }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 pre {
     white-space: pre-wrap;
+}
+.v-center {
+    align-items: center;
+}
+.is-s {
+    color: hsl(48, 100%, 67%);
+}
+.is-a {
+    color: hsl(348, 100%, 61%);
+}
+.is-b {
+    color: hsl(141, 71%, 48%);
+}
+.is-c {
+    color: hsl(217, 71%, 53%)
+}
+.is-d {
+    color: hsl(204, 86%, 53%)
+}
+.is-e {
+    color: hsl(171, 100%, 41%)
+}
+.is-f {
+    color: hsl(0, 0%, 48%)
+}
+
+div.profile {
+    background-color: #fff;
+    border: 1px solid #a0a0a0;
+    border-radius: 1em;
+    margin-right: 0.5rem;
+    margin-left: -0.5rem;
+}
+div.common {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #a0a0a0;
+    border-radius: 1em;
+    > div > div {
+        border-right: 1px dashed gray;
+    }
+    > div > div:last-child {
+        border: none;
+    }
+}
+div.top {
+    margin-bottom: 1.5rem;
+}
+div.bottom {
+    background-color: #fff;
+    border: 1px solid #a0a0a0;
+    border-radius: 1em;
+    margin: -0.75rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 </style>
