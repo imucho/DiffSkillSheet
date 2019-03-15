@@ -145,7 +145,7 @@ export default {
                     ret = 'ミーティング'
                     break;
                 case 'crossDepartmental':
-                    ret = '横軸'
+                    ret = '組織貢献'
                     break;
                 default:
                     console.log('不正なキー')

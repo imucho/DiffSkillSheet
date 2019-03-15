@@ -6,7 +6,7 @@
             <skill-select :changeCallback="UPDATE_SOFTWARE_DESIGN" :value="softwareDesign">設計</skill-select>
             <skill-select :changeCallback="UPDATE_MAN_HOUR_ESTIMATE" :value="manHourEstimate">工数見積もり</skill-select>
             <skill-select :changeCallback="UPDATE_MEETING" :value="meeting">ミーティング</skill-select>
-            <skill-select :changeCallback="UPDATE_CROSS_DEPARTMENTAL" :value="crossDepartmental">横軸</skill-select>
+            <skill-select :changeCallback="UPDATE_CROSS_DEPARTMENTAL" :value="crossDepartmental">組織貢献</skill-select>
         </div>
     </section>
 </template>
