@@ -6,17 +6,17 @@
                         <p class="title is-4 column">{{name}}</p>
                     </div>
                     <div class="columns">
-                        <p class="label column">{{company}}</p>
+                        <p class="is-size-5 label column">{{company}}</p>
                     </div>
                     <div class="columns">
-                        <p class="label column">{{job}}</p>
+                        <p class="is-size-5 label column">{{job}}</p>
                     </div>
                 </div>
                 <div class="column common">
                     <div class="columns">
                         <div class="column" v-for="(skill, key) in common" :key="key">
                             <div>
-                                <p class="label">{{convertCommonSkillKeyToSkillName(key)}}</p>
+                                <p class="is-size-5 label">{{convertCommonSkillKeyToSkillName(key)}}</p>
                             </div>
                             <div class="columns v-center">
                                 <div class="column">
@@ -35,12 +35,12 @@
             <div class="unique">
                 <div class="columns">
                     <div class="column">
-                        <b-tag type="is-warning" size="is-large">{{unique.name}}</b-tag>
+                        <b-tag type="is-warning" class="is-size-4">{{unique.name}}</b-tag>
                     </div>
                 </div>
                 <div class="columns">
                     <div class="column">
-                        <pre class="label">{{unique.description}}</pre>
+                        <pre class="is-size-5">{{unique.description}}</pre>
                     </div>
                 </div>
             </div>
@@ -49,8 +49,8 @@
                     <b-field grouped group-multiline>
                         <div class="control" v-for="(skill, index) in numerical.list" :key="index">
                             <b-taglist attached>
-                                <b-tag :type="convertNumToColorType(skill.num)" size="is-large">{{skill.name}}</b-tag>
-                                <b-tag type="is-dark" size="is-large">{{skill.num}}</b-tag>
+                                <b-tag :type="convertNumToColorType(skill.num)" class="is-size-4" size="is-large">{{skill.name}}</b-tag>
+                                <b-tag type="is-dark" class="is-size-4" size="is-large">{{skill.num}}</b-tag>
                             </b-taglist>
                         </div>
                     </b-field>
@@ -60,7 +60,7 @@
                 <div class="column">
                     <b-field grouped group-multiline>
                         <div class="control" v-for="(skill, index) in special.list" :key="index">
-                            <b-tag :type="convertTypeToColorType(skill.type)" size="is-large" attached>{{skill.name}}</b-tag>
+                            <b-tag :type="convertTypeToColorType(skill.type)" class="is-size-4" size="is-large" attached>{{skill.name}}</b-tag>
                         </div>
                     </b-field>
                 </div>
@@ -251,8 +251,7 @@ div.bottom {
     margin: -0.75rem;
     margin-left: -1.25rem;
     margin-right: -1.25rem;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em;
 
     > .unique {
         margin-bottom: 0.75rem;
