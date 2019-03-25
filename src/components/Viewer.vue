@@ -32,12 +32,16 @@
                 </div>
         </div>
         <div class="bottom">
-            <div class="columns unique">
-                <div class="column is-1">
-                    <b-tag type="is-warning" size="is-large">{{unique.name}}</b-tag>
+            <div class="unique">
+                <div class="columns">
+                    <div class="column">
+                        <b-tag type="is-warning" size="is-large">{{unique.name}}</b-tag>
+                    </div>
                 </div>
-                <div class="column">
-                    <pre class="label">{{unique.description}}</pre>
+                <div class="columns">
+                    <div class="column">
+                        <pre class="label">{{unique.description}}</pre>
+                    </div>
                 </div>
             </div>
             <div class="columns numerical">
@@ -249,5 +253,17 @@ div.bottom {
     margin-right: -1.25rem;
     padding-top: 1em;
     padding-bottom: 1em;
+
+    > .unique {
+        margin-bottom: 0.75rem;
+
+        .columns:first-child .column {
+            padding-bottom: 0px;
+        }
+
+        .columns:last-child .column {
+            padding-top: 0px;
+        }
+    }
 }
 </style>
