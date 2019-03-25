@@ -60,7 +60,7 @@
                 <div class="column">
                     <b-field grouped group-multiline>
                         <div class="control" v-for="(skill, index) in special.list" :key="index">
-                            <b-tag :type="convertTypeToColorType(skill.type)" class="is-size-4" size="is-large" attached>{{skill.name}}</b-tag>
+                            <b-tag :type="convertTypeToColorType(skill.type)" class="is-size-4 has-text-dark" size="is-large" attached>{{skill.name}}</b-tag>
                         </div>
                     </b-field>
                 </div>
@@ -264,5 +264,9 @@ div.bottom {
             padding-top: 0px;
         }
     }
+}
+
+.is-success {
+    color: black;
 }
 </style>
